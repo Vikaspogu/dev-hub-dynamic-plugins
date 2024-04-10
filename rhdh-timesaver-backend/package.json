@@ -1,6 +1,6 @@
 {
   "name": "@vikaspogu/rhdh-timesaver-backend",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "DeveloperHub dynamic plugin for otimesaver-backend",
   "main": "src/index.ts",
   "types": "src/index.ts",
@@ -18,19 +18,14 @@
   "scripts": {
     "clean": "backstage-cli package clean",
     "build": "backstage-cli package build",
-    "export-dynamic": "janus-cli package export-dynamic-plugin  --embed-package @tduniec/backstage-plugin-time-saver-backend"
+    "clean-dynamic-sources": "yarn clean && rm -Rf node_modules dist-types dist-dynamic",
+    "export-dynamic": "janus-cli package export-dynamic-plugin --embed-as-dependencies --embed-package @tduniec/backstage-plugin-time-saver-backend"
   },
   "files": [
-    "dist",
-    "dist-scalprum"
+    "dist"
   ],
-  "scalprum": {
-    "name": "vikaspogu.rhdh-timesaver-backend",
-    "exposedModules": {
-      "PluginRoot": "./src/index.ts"
-    }
-  },
   "dependencies": {
+    "@backstage/backend-dynamic-feature-service": "^0.2.8",
     "@tduniec/backstage-plugin-time-saver-backend": "^0.1.10"
   }
 }
