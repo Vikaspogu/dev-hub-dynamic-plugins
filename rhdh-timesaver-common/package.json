@@ -1,6 +1,6 @@
 {
   "name": "@vikaspogu/rhdh-timesaver-common",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "DeveloperHub dynamic plugin for timesaver-common",
   "main": "src/index.ts",
   "types": "src/index.ts",
@@ -18,7 +18,7 @@
   "scripts": {
     "clean": "backstage-cli package clean",
     "build": "backstage-cli package build",
-    "export-dynamic": "janus-cli package export-dynamic-plugin"
+    "export-dynamic": "janus-cli package export-dynamic-plugin --embed-as-dependencies --embed-package @tduniec/backstage-plugin-time-saver-common"
   },
   "files": [
     "dist",
