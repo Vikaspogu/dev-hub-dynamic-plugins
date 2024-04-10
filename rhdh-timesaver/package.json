@@ -1,6 +1,6 @@
 {
-  "name": "@vikaspogu/rhdh-rhdh-timesaver",
-  "version": "0.0.1",
+  "name": "@vikaspogu/rhdh-timesaver",
+  "version": "0.0.2",
   "description": "DeveloperHub dynamic plugin for timesaver",
   "main": "src/index.ts",
   "types": "src/index.ts",
@@ -25,7 +25,7 @@
     "dist-scalprum"
   ],
   "scalprum": {
-    "name": "vikaspogu.rhdh-rhdh-timesaver",
+    "name": "vikaspogu.rhdh-timesaver",
     "exposedModules": {
       "PluginRoot": "./src/index.ts"
     }
