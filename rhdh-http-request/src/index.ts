@@ -1,1 +1,1 @@
-export * from "@roadiehq/scaffolder-backend-module-http-request"
+export { createHttpBackstageAction } from "@roadiehq/scaffolder-backend-module-http-request";
