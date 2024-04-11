@@ -18,18 +18,12 @@
   "scripts": {
     "clean": "backstage-cli package clean",
     "build": "backstage-cli package build",
-    "export-dynamic": "janus-cli package export-dynamic-plugin --embed-as-dependencies --embed-package @tduniec/backstage-plugin-time-saver-common"
+    "clean-dynamic-sources": "yarn clean && rm -Rf node_modules dist-types dist-dynamic",
+    "export-dynamic": "janus-cli package export-dynamic-plugin --embed-as-dependencies @tduniec/backstage-plugin-time-saver-common --embed-package @tduniec/backstage-plugin-time-saver-common"
   },
   "files": [
-    "dist",
-    "dist-scalprum"
+    "dist"
   ],
-  "scalprum": {
-    "name": "vikaspogu.rhdh-timesaver-common",
-    "exposedModules": {
-      "PluginRoot": "./src/index.ts"
-    }
-  },
   "dependencies": {
     "@tduniec/backstage-plugin-time-saver-common": "^0.1.2"
   }

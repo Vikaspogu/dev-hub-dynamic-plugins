@@ -28,12 +28,6 @@
     "dist-dynamic/dist/**",
     "dist-dynamic/alpha/*"
   ],
-  "scalprum": {
-    "name": "vikaspogu.rhdh-datetime",
-    "exposedModules": {
-      "PluginRoot": "./src/index.ts"
-    }
-  },
   "dependencies": {
     "@backstage/backend-dynamic-feature-service": "^0.2.8",
     "@backstage/backend-plugin-api": "^0.6.16",
