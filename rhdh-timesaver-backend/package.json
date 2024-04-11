@@ -1,9 +1,10 @@
 {
   "name": "@vikaspogu/rhdh-timesaver-backend",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "DeveloperHub dynamic plugin for otimesaver-backend",
   "main": "src/index.ts",
   "license": "Apache-2.0",
+  "type": "module",
   "backstage": {
     "role": "backend-plugin"
   },

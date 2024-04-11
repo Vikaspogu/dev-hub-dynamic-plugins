@@ -1,1 +1,1 @@
-export { timeSaverPlugin as default } from "./plugin";
+export * from './dynamic/index';
