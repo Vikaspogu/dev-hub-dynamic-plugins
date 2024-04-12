@@ -1,0 +1,1 @@
+export { dynamicPluginInstaller } from "./dynamic";

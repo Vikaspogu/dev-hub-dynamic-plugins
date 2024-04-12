@@ -1,0 +1,32 @@
+{
+  "name": "@vikaspogu/dynamic-timesaver-common",
+  "version": "0.0.1",
+  "description": "Dynamic plugin for timesaver common",
+  "main": "src/index.ts",
+  "author": "vikaspogu",
+  "license": "Apache-2.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@backstage/backend-dynamic-feature-service": "^0.2.8",
+    "@backstage/cli": "^0.26.2",
+    "@janus-idp/cli": "^1.7.10",
+    "@tduniec/backstage-plugin-time-saver-common": "^0.1.2"
+  },
+  "backstage": {
+    "role": "backend-plugin-module"
+  },
+  "files": [
+    "dist-dynamic/*.*",
+    "dist-dynamic/dist/**"
+  ],
+  "scripts": {
+    "build": "backstage-cli package build",
+    "lint": "backstage-cli package lint",
+    "test": "backstage-cli package test --passWithNoTests --coverage",
+    "clean": "backstage-cli package clean",
+    "clean-dynamic-sources": "yarn clean && rm -Rf node_modules",
+    "export-dynamic": "janus-cli package export-dynamic-plugin --embed-package  @tduniec/backstage-plugin-time-saver-common --override-interop default"
+  }
+}

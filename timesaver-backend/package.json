@@ -1,0 +1,33 @@
+{
+  "name": "@vikaspogu/dynamic-timesaver-backend",
+  "version": "0.0.1",
+  "description": "Dynamic timesaver backend plugin",
+  "main": "src/index.ts",
+  "author": "vikaspogu",
+  "license": "Apache-2.0",
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@backstage/backend-dynamic-feature-service": "^0.2.8",
+    "@backstage/cli": "^0.26.2",
+    "@janus-idp/cli": "^1.7.10",
+    "@tduniec/backstage-plugin-time-saver-backend": "^0.1.11"
+  },
+  "backstage": {
+    "role": "backend-plugin-module"
+  },
+  "files": [
+    "dist-dynamic/*.*",
+    "dist-dynamic/dist/**"
+  ],
+  "scripts": {
+    "build": "backstage-cli package build",
+    "lint": "backstage-cli package lint",
+    "test": "backstage-cli package test --passWithNoTests --coverage",
+    "clean": "backstage-cli package clean",
+    "clean-dynamic-sources": "yarn clean && rm -Rf node_modules",
+    "export-dynamic": "janus-cli package export-dynamic-plugin --embed-package  @tduniec/backstage-plugin-time-saver-backend --override-interop default"
+  }
+}
