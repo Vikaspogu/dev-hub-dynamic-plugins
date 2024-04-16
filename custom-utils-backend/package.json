@@ -1,6 +1,6 @@
 {
   "name": "@vikaspogu/custom-utils-backend",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Dynamic Plugin to get custom-utils",
   "main": "src/index.ts",
   "types": "src/index.ts",

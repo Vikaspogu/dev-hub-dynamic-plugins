@@ -1,8 +1,10 @@
 import { createTemplateAction } from "@backstage/plugin-scaffolder-node";
 
 type TemplateActionParameters = {
-  appName: string;
+  lineOfBusiness: string;
   networkType: string;
+  acronym: string;
+  nameExtra: string;
 };
 
 export const generateNamespaceNameAction = () => {
@@ -12,16 +14,26 @@ export const generateNamespaceNameAction = () => {
     schema: {
       input: {
         type: "object",
-        required: ["appName", "networkType"],
+        required: ["lineOfBusiness", "networkType", "acronym", "nameExtra"],
         properties: {
-          appName: {
-            title: "Name of the application",
-            description: "Name of the application to be on-boarded",
+          lineOfBusiness: {
+            title: "Line of Business",
+            description: "Line of Business of the application to be on-boarded",
             type: "string",
           },
           networkType: {
             title: "Type of network",
             description: "Type of network namespace uses external or internal",
+            type: "string",
+          },
+          acronym: {
+            title: "Acronym",
+            description: "Acronym for the application to be on-boarded",
+            type: "string",
+          },
+          nameExtra: {
+            title: "Extra Name",
+            description: "Extra Name for the application",
             type: "string",
           },
         },
@@ -39,11 +51,32 @@ export const generateNamespaceNameAction = () => {
     },
     async handler(ctx) {
       var genNamespaceName = "";
-      const { appName, networkType } = ctx.input;
+      const { lineOfBusiness, networkType, acronym, nameExtra } = ctx.input;
+
+      switch (lineOfBusiness) {
+        case "commercial" || "corporate":
+          genNamespaceName = "cm";
+          break;
+        case "information-systems":
+          genNamespaceName = "is";
+          break;
+        case "pgba":
+          genNamespaceName = "tc";
+          break;
+        default:
+          genNamespaceName = "mg";
+          break;
+      }
       if (networkType == "external") {
-        genNamespaceName = appName.concat("e");
+        genNamespaceName += "e";
       } else if (networkType == "internal") {
-        genNamespaceName = appName.concat("i");
+        genNamespaceName += "i";
+      }
+      if (acronym) {
+        genNamespaceName += acronym;
+      }
+      if (nameExtra) {
+        genNamespaceName += nameExtra;
       }
       ctx.output("generatedNamespaceName", `${genNamespaceName}`);
     },
