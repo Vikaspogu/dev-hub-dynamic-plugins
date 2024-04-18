@@ -2,7 +2,7 @@
 
 ## Dynamic Third Party Backend
 
-Follow [dynamic-plugin](sha512-KAmUoBjzf3sbIAKtokevNh0imo49op3eorWGAZrGnIp0Gz0UoeQjg42diuFw5Qu0T8DFduy4jFnPgPbVsa4VZw==) docs to get started
+Follow [dynamic-plugin](https://github.com/janus-idp/backstage-showcase/blob/main/showcase-docs/dynamic-plugins.md) docs to get started
 
 ### Pack & Publish
 
