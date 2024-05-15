@@ -1,7 +1,11 @@
 import { createBackendModule } from "@backstage/backend-plugin-api";
 import { scaffolderActionsExtensionPoint } from "@backstage/plugin-scaffolder-node/alpha";
 
-import { currentDateTimeAction, generateNamespaceNameAction } from "./actions";
+import {
+  currentDateTimeAction,
+  generateNamespaceNameAction,
+  parsePCFManifest,
+} from "./actions";
 
 export const scaffolderModuleCustomUtilsActions = createBackendModule({
   moduleId: "custom-utils-module",
@@ -15,6 +19,7 @@ export const scaffolderModuleCustomUtilsActions = createBackendModule({
         scaffolder.addActions(
           currentDateTimeAction(),
           generateNamespaceNameAction(),
+          parsePCFManifest(),
         );
       },
     });

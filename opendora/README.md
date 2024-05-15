@@ -1,13 +1,5 @@
 # Developer Hub Dynamic Plugin for OpenDORA
 
-## Get Integrity SHA
-
-[NPM Registry](https://registry.npmjs.org/@vikaspogu/developer-hub-open-dora)
-
-```bash
-npm info @vikaspogu/rhdh-opendora 
-```
-
 ## Build and Publish
 
 ```bash
